@@ -25,6 +25,7 @@ class Player:
     MP = 0
     MXMP = 0
     MOV = 0
+    BLK = 0
 
 def setstat(NO):
     pass
@@ -97,6 +98,8 @@ p0.MP = p0.MXMP
 p0.MOV = 5*(p0.SP + 4)
 if p0.MOV < 10:
     p0.MOV = 10
+
+
 if player2 == 1:
     p1.MXHP = 30 + (p1.ST + 4)*2
     if p1.MXHP < 24:
@@ -117,6 +120,8 @@ if player2 == 1:
     p1.MOV = 5*(p1.SP + 4)
     if p1.MOV < 10:
         p1.MOV = 10
+
+
 if player3 == 1:
     p2.MXHP = 30 + (p2.ST + 4)*2
     if p2.MXHP < 24:
@@ -137,6 +142,8 @@ if player3 == 1:
     p2.MOV = 5*(p2.SP + 4)
     if p2.MOV < 10:
         p2.MOV = 10
+
+
 if player4 == 1:
     p3.MXHP = 30 + (p3.ST + 4)*2
     if p3.MXHP < 24:
@@ -165,7 +172,7 @@ print (echo.format('1', 'Might', p0.ST))
 print (echo.format('1', 'Speed', p0.SP))
 print (echo.format('1', 'Mind', p0.MI))
 print (echo.format('1', 'Wit', p0.WT))
-print (echo.format('1', 'HP', p0.MXMP))
+print (echo.format('1', 'HP', p0.MXHP))
 print (echo.format('1', 'Injuries', p0.MXINJ))
 print (echo.format('1', 'Mana', p0.MXMP))
 print (echo.format('1', 'Movement', p0.MOV))
@@ -175,7 +182,7 @@ if player2 == 1:
     print (echo.format('2', 'Speed', p1.SP))
     print (echo.format('2', 'Mind', p1.MI))
     print (echo.format('2', 'Wit', p1.WT))
-    print (echo.format('2', 'HP', p1.MXMP))
+    print (echo.format('2', 'HP', p1.MXHP))
     print (echo.format('2', 'Injuries', p1.MXINJ))
     print (echo.format('2', 'Mana', p1.MXMP))
     print (echo.format('2', 'Movement', p1.MOV))
@@ -185,7 +192,7 @@ if player3 == 1:
     print (echo.format('3', 'Speed', P2.SP))
     print (echo.format('3', 'Mind', p2.MI))
     print (echo.format('3', 'Wit', p2.WT))
-    print (echo.format('3', 'HP', p2.MXMP))
+    print (echo.format('3', 'HP', p2.MXHP))
     print (echo.format('3', 'Injuries', p2.MXINJ))
     print (echo.format('3', 'Mana', p2.MXMP))
     print (echo.format('3', 'Movement', p2.MOV))
@@ -195,10 +202,9 @@ if player4 == 1:
     print (echo.format('4', 'Speed', P3.SP))
     print (echo.format('4', 'Mind', p3.MI))
     print (echo.format('4', 'Wit', p3.WT))
-    print (echo.format('4', 'HP', p3.MXMP))
+    print (echo.format('4', 'HP', p3.MXHP))
     print (echo.format('4', 'Injuries', p3.MXINJ))
     print (echo.format('4', 'Mana', p3.MXMP))
     print (echo.format('4', 'Movement', p3.MOV))
     print('\n\n')
 pause()
-print('')
