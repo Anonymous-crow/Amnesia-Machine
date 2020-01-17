@@ -4,6 +4,8 @@ import sys, math, pygame, random, time
 
 def clear():
     os.system('cls' if os.name=='nt' else 'clear')
+def pause():
+    input("Press ENTER to continue...")
 
 player2 = 0
 player3 = 0
@@ -74,7 +76,9 @@ if cont == 'Yes':
 
 clear()
 print('calculating stats...')
-p0.MXHP = 30 + (p0.ST + 4)*2
+p0.MXHP = int(30 + (p0.ST + 4)*2)
+print(p0.MXHP)
+pause()
 if p0.MXHP < 24:
     p0.MXHP = 24
 p0.HP = p0.MXHP
@@ -161,27 +165,40 @@ print (echo.format('1', 'Might', p0.ST))
 print (echo.format('1', 'Speed', p0.SP))
 print (echo.format('1', 'Mind', p0.MI))
 print (echo.format('1', 'Wit', p0.WT))
+print (echo.format('1', 'HP', p0.MXMP))
+print (echo.format('1', 'Injuries', p0.MXINJ))
+print (echo.format('1', 'Mana', p0.MXMP))
+print (echo.format('1', 'Movement', p0.MOV))
 print('\n\n')
 if player2 == 1:
     print (echo.format('2', 'Might', p1.ST))
     print (echo.format('2', 'Speed', p1.SP))
     print (echo.format('2', 'Mind', p1.MI))
     print (echo.format('2', 'Wit', p1.WT))
+    print (echo.format('2', 'HP', p1.MXMP))
+    print (echo.format('2', 'Injuries', p1.MXINJ))
+    print (echo.format('2', 'Mana', p1.MXMP))
+    print (echo.format('2', 'Movement', p1.MOV))
     print('\n\n')
 if player3 == 1:
     print (echo.format('3', 'Might', p2.ST))
     print (echo.format('3', 'Speed', P2.SP))
     print (echo.format('3', 'Mind', p2.MI))
     print (echo.format('3', 'Wit', p2.WT))
+    print (echo.format('3', 'HP', p2.MXMP))
+    print (echo.format('3', 'Injuries', p2.MXINJ))
+    print (echo.format('3', 'Mana', p2.MXMP))
+    print (echo.format('3', 'Movement', p2.MOV))
     print('\n\n')
 if player4 == 1:
     print (echo.format('4', 'Might', p3.ST))
     print (echo.format('4', 'Speed', P3.SP))
     print (echo.format('4', 'Mind', p3.MI))
     print (echo.format('4', 'Wit', p3.WT))
+    print (echo.format('4', 'HP', p3.MXMP))
+    print (echo.format('4', 'Injuries', p3.MXINJ))
+    print (echo.format('4', 'Mana', p3.MXMP))
+    print (echo.format('4', 'Movement', p3.MOV))
     print('\n\n')
-
-input("Press ENTER to continue...")
-clear()
-
+pause()
 print('')
