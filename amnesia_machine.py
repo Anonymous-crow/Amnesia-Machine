@@ -70,7 +70,7 @@ print (echo.format('1', 'Mind', p0.MI))
 print (echo.format('1', 'Wit', p0.WT))
 if player2 == 1:
     print (echo.format('2', 'Might', p1.ST))
-    print (echo.format('2', 'Speed', P1.SP))
+    print (echo.format('2', 'Speed', p1.SP))
     print (echo.format('2', 'Mind', p1.MI))
     print (echo.format('2', 'Wit', p1.WT))
 if player3 == 1:
