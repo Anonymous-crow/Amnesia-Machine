@@ -78,8 +78,6 @@ if cont == 'Yes':
 clear()
 print('calculating stats...')
 p0.MXHP = int(30 + (p0.ST + 4)*2)
-print(p0.MXHP)
-pause()
 if p0.MXHP < 24:
     p0.MXHP = 24
 p0.HP = p0.MXHP
