@@ -1,4 +1,4 @@
-p1import os
+import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import sys, math, pygame, random, time
 
@@ -85,13 +85,13 @@ elif p0.SP > p0.ST:
 if p0.MXINJ < 1:
     p0.MXINJ = 1
 p0.INJ = p0.MXINJ
-if p0.MI  >= p0.WT
+if p0.MI  >= p0.WT:
     p0.MXMP = int(2*(p0.MI + 1) + 2)
-if p0.WT  > p0.MI
+if p0.WT  > p0.MI:
     p0.MXMP = int(2*(p0.WT + 1) + 2)
 p0.MP = p0.MXMP
 p0.MOV = 5*(p0.SP + 4)
-if p0.MOV < 10
+if p0.MOV < 10:
     p0.MOV = 10
 if player2 == 1:
     p1.MXHP = 30 + (p1.ST + 4)*2
@@ -105,13 +105,13 @@ if player2 == 1:
     if p1.MXINJ < 1:
         p1.MXINJ = 1
     p1.INJ = p1.MXINJ
-    if p1.MI  >= p1.WT
+    if p1.MI  >= p1.WT:
         p1.MXMP = int(2*(p1.MI + 1) + 2)
-    if p1.WT  > p1.MI
+    if p1.WT  > p1.MI:
         p1.MXMP = int(2*(p1.WT + 1) + 2)
     p1.MP = p1.MXMP
     p1.MOV = 5*(p1.SP + 4)
-    if p1.MOV < 10
+    if p1.MOV < 10:
         p1.MOV = 10
 if player3 == 1:
     p2.MXHP = 30 + (p2.ST + 4)*2
@@ -125,13 +125,13 @@ if player3 == 1:
     if p2.MXINJ < 1:
         p2.MXINJ = 1
     p2.INJ = p2.MXINJ
-    if p2.MI  >= p2.WT
+    if p2.MI  >= p2.WT:
         p2.MXMP = int(2*(p2.MI + 1) + 2)
-    if p2.WT  > p2.MI
+    if p2.WT  > p2.MI:
         p2.MXMP = int(2*(p2.WT + 1) + 2)
     p2.MP = p2.MXMP
     p2.MOV = 5*(p2.SP + 4)
-    if p2.MOV < 10
+    if p2.MOV < 10:
         p2.MOV = 10
 if player4 == 1:
     p3.MXHP = 30 + (p3.ST + 4)*2
@@ -145,13 +145,13 @@ if player4 == 1:
     if p3.MXINJ < 1:
         p3.MXINJ = 1
     p3.INJ = p3.MXINJ
-    if p3.MI  >= p3.WT
+    if p3.MI  >= p3.WT:
         p3.MXMP = int(2*(p3.MI + 1) + 2)
-    if p3.WT  > p3.MI
+    if p3.WT  > p3.MI:
         p3.MXMP = int(2*(p3.WT + 1) + 2)
     p3.MP = p3.MXMP
     p3.MOV = 5*(p3.SP + 4)
-    if p3.MOV < 10
+    if p3.MOV < 10:
         p3.MOV = 10
 
 clear()
