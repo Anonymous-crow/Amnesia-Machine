@@ -22,6 +22,7 @@ print('welcome to the Amesia Machine')
 stattxt = ('Enter Player {} Stat:\n')
 p0 = Player()
 p0.Name = str(input('Enter Player Name:\n'))
+f = open("%s.txt" %p0.Name, "a")
 print("Player name is {}.".format(p0.Name))
 p0.ST = int(input(stattxt.format('Strength')))
 p0.SP = int(input(stattxt.format('Speed')))
@@ -274,4 +275,4 @@ while GBLN.HP > 0 and p0.HP > 0:
         elif not (GBLN.AN + 3) < (p0.RN + p0.PFS):
             print('The goblin dodges!' '\n\n')
         pause()
-        TURN = "PTY"
+        TURN = "NME"
