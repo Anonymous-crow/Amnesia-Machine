@@ -5,8 +5,10 @@ from repo import NME, Player
 
 def clear():
     os.system('cls' if os.name=='nt' else 'clear')
+
 def pause():
     input("Press ENTER to continue...")
+    print('\n\n')
 
 player2 = 0
 player3 = 0
@@ -212,14 +214,15 @@ clear()
 
 GBLN = NME()
 GBLN.HP = 20
-GBLN.INIT = 7
+GBLN.INIT = 5
 print("A wild goblin attacks the party!\n\n")
 if GBLN.INIT >= (p0.SP + p0.WT):
-    print("The crafty goblin goes first!")
-    TURN = NME
+    print("The crafty goblin goes first!\n\n")
+    TURN = "NME"
 elif GBLN.INIT < (p0.SP + p0.WT):
-    print("The party has the upper hand!")
-    TURN = PTY
+    print("The party has the upper hand!\n\n")
+    TURN = "PTY"
+pause()
 while GBLN.HP > 0 and p0.HP > 0:
     echo = 'Player {} {} stat is {}'
     print (echo.format('1', 'Might', p0.ST))
@@ -231,9 +234,7 @@ while GBLN.HP > 0 and p0.HP > 0:
     print (echo.format('1', 'Mana', p0.MXMP))
     print (echo.format('1', 'Movement', p0.MOV))
     print('\n\n')
-    pause()
-    print('\n\n')
-    if TURN == NME:
+    if TURN == "NME":
         clear()
         print('The goblin enters a stance...' '\n')
         GBLN.STANCE = random.randint(1, 3)
@@ -254,8 +255,23 @@ while GBLN.HP > 0 and p0.HP > 0:
         elif not (GBLN.AN + 3) > (p0.RN + p0.PFS):
             print('The goblin misses!' '\n\n')
         pause()
-        clear()
-        TURN = PTY
-    if TURN == PTY:
-        p0.STANCE = input('Choose your stance: \n\n   "1" - Defensive(6, 14) \n   "2" - Neutral(10, 10) \n   "3" - Offensive')
-        if
+        TURN = "PTY"
+    if TURN == "PTY":
+        p0.STANCE = input('Choose your stance: \n\n   "1" - Defensive(6, 14) \n   "2" - Neutral(10, 10) \n   "3" - Offensive(14, 6) \n\n')
+        if p0.STANCE == 1:
+            p0.AN = 6
+            p0.RN = 14
+        if p0.STANCE == 2:
+            p0.AN = 10
+            p0.RN = 10
+        if p0.STANCE == 3:
+            p0.AN = 14
+            p0.RN = 6
+        if (GBLN.AN + 3) < (p0.RN + p0.PFS):
+            p0.DMG = int(8*(p0.RN + p0.PFS - GBLN.AN + 3)/10)
+            GBLN.HP -= p0.DMG
+            print('You hit the goblin for ', str(p0.DMG), ' damage!' '\n\n')
+        elif not (GBLN.AN + 3) < (p0.RN + p0.PFS):
+            print('The goblin dodges!' '\n\n')
+        pause()
+        TURN = "PTY"
