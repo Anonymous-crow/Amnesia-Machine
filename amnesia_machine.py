@@ -251,7 +251,7 @@ if player4 == 1:
 pause()
 clear()
 
-GBLN = Enemy()
+GBLN = NME()
 GBLN.HP = 20
 GBLN.INIT = 7
 print("A wild goblin attacks the party!\n\n")
