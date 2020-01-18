@@ -26,6 +26,33 @@ class Player:
     MXMP = 0
     MOV = 0
     BLK = 0
+    STANCE = 2
+    AN = 10
+    RN = 10
+    INIT = 0
+    PFS = 'ST' ##Preferred (F)ysical Stat
+    DMG = 0
+
+class NME:
+    Name = "Gerblin"
+    ST = 1
+    SP = 2
+    MI = 0
+    WI = -1
+    HP = 15
+    MXHP = 15
+    INJ = 2
+    MXINJ = 2
+    MP = 0
+    MXMP = 0
+    MOV = 30
+    BLK = 0
+    STANCE = 2
+    AN = 10
+    RN = 10
+    INIT = 0
+    PFS = 'ST'
+    DMG = 0
 
 def setstat(NO):
     pass
@@ -96,6 +123,10 @@ p0.MP = p0.MXMP
 p0.MOV = 5*(p0.SP + 4)
 if p0.MOV < 10:
     p0.MOV = 10
+if p0.ST >= p0.SP:
+    p0.PFS = p0.ST
+elif p0.SP > p0.ST:
+    p0.PFS = p0.SP
 
 
 if player2 == 1:
@@ -118,6 +149,10 @@ if player2 == 1:
     p1.MOV = 5*(p1.SP + 4)
     if p1.MOV < 10:
         p1.MOV = 10
+    if p1.ST >= p1.SP:
+        p1.PFS = p1.ST
+    elif p1.SP > p1.ST:
+        p1.PFS = p1.SP
 
 
 if player3 == 1:
@@ -140,6 +175,10 @@ if player3 == 1:
     p2.MOV = 5*(p2.SP + 4)
     if p2.MOV < 10:
         p2.MOV = 10
+    if p2.ST >= p2.SP:
+        p2.PFS = p2.ST
+    elif p2.SP > p2.ST:
+        p2.PFS = p2.SP
 
 
 if player4 == 1:
@@ -162,6 +201,10 @@ if player4 == 1:
     p3.MOV = 5*(p3.SP + 4)
     if p3.MOV < 10:
         p3.MOV = 10
+    if p3.ST >= p3.SP:
+        p3.PFS = p3.ST
+    elif p3.SP > p3.ST:
+        p3.PFS = p3.SP
 
 clear()
 
@@ -208,16 +251,17 @@ if player4 == 1:
 pause()
 clear()
 
-GBLN_HP = 20
-GBLN_INIT = 7
+GBLN = Enemy()
+GBLN.HP = 20
+GBLN.INIT = 7
 print("A wild goblin attacks the party!\n\n")
-if GBLN_INIT >= (p0.SP + p0.WT):
+if GBLN.INIT >= (p0.SP + p0.WT):
     print("The crafty goblin goes first!")
     TURN = NME
-elif GBLN_INIT < (p0.SP + p0.WT):
+elif GBLN.INIT < (p0.SP + p0.WT):
     print("The party has the upper hand!")
     TURN = PTY
-while GBLN_HP > 0 and p0.HP > 0:
+while GBLN.HP > 0 and p0.HP > 0:
     echo = 'Player {} {} stat is {}'
     print (echo.format('1', 'Might', p0.ST))
     print (echo.format('1', 'Speed', p0.SP))
@@ -228,3 +272,26 @@ while GBLN_HP > 0 and p0.HP > 0:
     print (echo.format('1', 'Mana', p0.MXMP))
     print (echo.format('1', 'Movement', p0.MOV))
     print('\n\n')
+    pause()
+    print('\n\n')
+    if TURN == NME:
+        clear()
+        print('The goblin enters a stance...' '\n')
+        GBLN.STANCE = random.randint(1, 3)
+        if GBLN.STANCE == 1:
+            GBLN.AN = 6
+            GBLN.RN = 14
+        if GBLN.STANCE == 2:
+            GBLN.AN = 10
+            GBLN.RN = 10
+        if GBLN.STANCE == 3:
+            GBLN.AN = 14
+            GBLN.RN = 6
+        print('The goblin attacks!' '\n')
+        if (GBLN.AN + 3) > (p0.RN + p0.PFS):
+            GBLN.DMG = int(8*(GBLN.AN + 3 - p0.RN + p0.PFS))
+            p0.HP -= GBLN.DMG
+            print('The goblin hits for ', str(GBLN.DMG), ' damage!' '\n\n')
+        elif not (GBLN.AN + 3) > (p0.RN + p0.PFS):
+            print('The goblin misses!' '\n\n')
+        clear()
