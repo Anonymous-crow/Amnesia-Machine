@@ -1,6 +1,7 @@
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import sys, math, pygame, random, time
+from repo import NME, Player
 
 def clear():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -11,48 +12,6 @@ player2 = 0
 player3 = 0
 player4 = 0
 playerNO = 1
-
-class Player:
-    Name = "Null"
-    ST = 0
-    SP = 0
-    MI = 0
-    WI = 0
-    HP = 0
-    MXHP = 0
-    INJ = 0
-    MXINJ = 0
-    MP = 0
-    MXMP = 0
-    MOV = 0
-    BLK = 0
-    STANCE = 2
-    AN = 10
-    RN = 10
-    INIT = 0
-    PFS = 'ST' ##Preferred (F)ysical Stat
-    DMG = 0
-
-class NME:
-    Name = "Gerblin"
-    ST = 1
-    SP = 2
-    MI = 0
-    WI = -1
-    HP = 15
-    MXHP = 15
-    INJ = 2
-    MXINJ = 2
-    MP = 0
-    MXMP = 0
-    MOV = 30
-    BLK = 0
-    STANCE = 2
-    AN = 10
-    RN = 10
-    INIT = 0
-    PFS = 'ST'
-    DMG = 0
 
 def setstat(NO):
     pass
@@ -296,3 +255,7 @@ while GBLN.HP > 0 and p0.HP > 0:
             print('The goblin misses!' '\n\n')
         pause()
         clear()
+        TURN = PTY
+    if TURN == PTY:
+        p0.STANCE = input('Choose your stance: \n\n   "1" - Defensive(6, 14) \n   "2" - Neutral(10, 10) \n   "3" - Offensive')
+        if
