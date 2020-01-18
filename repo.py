@@ -19,6 +19,7 @@ class Player:
     INIT = 0
     PFS = 'ST' ##Preferred (F)ysical Stat
     DMG = 0
+    SAVFIL = "Noodle"
 
 class NME:
     Name = "Gerblin"
