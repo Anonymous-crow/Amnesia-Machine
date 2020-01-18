@@ -9,6 +9,7 @@ def clear():
 def pause():
     input("Press ENTER to continue...")
     print('\n\n')
+    time.sleep(0.5)
 
 player2 = 0
 player3 = 0
