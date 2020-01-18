@@ -206,3 +206,25 @@ if player4 == 1:
     print (echo.format('4', 'Movement', p3.MOV))
     print('\n\n')
 pause()
+clear()
+
+GBLN_HP = 20
+GBLN_INIT = 7
+print("A wild goblin attacks the party!\n\n")
+if GBLN_INIT >= (p0.SP + p0.WT):
+    print("The crafty goblin goes first!")
+    TURN = NME
+elif GBLN_INIT < (p0.SP + p0.WT):
+    print("The party has the upper hand!")
+    TURN = PTY
+while GBLN_HP > 0 and p0.HP > 0:
+    echo = 'Player {} {} stat is {}'
+    print (echo.format('1', 'Might', p0.ST))
+    print (echo.format('1', 'Speed', p0.SP))
+    print (echo.format('1', 'Mind', p0.MI))
+    print (echo.format('1', 'Wit', p0.WT))
+    print (echo.format('1', 'HP', p0.MXHP))
+    print (echo.format('1', 'Injuries', p0.MXINJ))
+    print (echo.format('1', 'Mana', p0.MXMP))
+    print (echo.format('1', 'Movement', p0.MOV))
+    print('\n\n')
