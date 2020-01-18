@@ -289,7 +289,7 @@ while GBLN.HP > 0 and p0.HP > 0:
             GBLN.RN = 6
         print('The goblin attacks!' '\n')
         if (GBLN.AN + 3) > (p0.RN + p0.PFS):
-            GBLN.DMG = int(8*(GBLN.AN + 3 - p0.RN + p0.PFS))
+            GBLN.DMG = int(8*(GBLN.AN + 3 - p0.RN + p0.PFS)/10)
             p0.HP -= GBLN.DMG
             print('The goblin hits for ', str(GBLN.DMG), ' damage!' '\n\n')
         elif not (GBLN.AN + 3) > (p0.RN + p0.PFS):
