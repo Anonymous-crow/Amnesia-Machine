@@ -294,4 +294,5 @@ while GBLN.HP > 0 and p0.HP > 0:
             print('The goblin hits for ', str(GBLN.DMG), ' damage!' '\n\n')
         elif not (GBLN.AN + 3) > (p0.RN + p0.PFS):
             print('The goblin misses!' '\n\n')
+        pause()
         clear()
